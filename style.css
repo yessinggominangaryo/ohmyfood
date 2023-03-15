@@ -46,7 +46,7 @@ main .city i {
     font-size: 1rem;
 }
 
- .explorer button {
+.explorer button {
     color: white;
     font-weight: 300;
     font-size: 1.5rem;
@@ -70,11 +70,11 @@ main .city i {
     @media (max-width: 800px) {
         flex-direction: column;
     }
-  }
-  .tuto li {
+}
+.tuto li {
     background-color: #f6f6f6;
     padding: 1rem 2rem;
     border: 1px solid red;
     flex-grow: 1;
     border-radius: 1rem;
-  }
+}
