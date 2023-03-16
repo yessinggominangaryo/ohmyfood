@@ -1,10 +1,10 @@
 {
-  "name": "ohmyfoodprojet2",
+  "name": "ohmyfood",
   "version": "1.0.0",
   "description": "Mon projet 2 ohmyfood",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch ./sass/style.scss:style.css " 
   },
   "repository": {
     "type": "git",
