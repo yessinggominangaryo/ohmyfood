@@ -2,21 +2,7 @@
 @import "./layout/header.scss";
 @import "./layout/city.scss";
 @import "./layout/explorer.scss";
+@import "./layout/tuto.scss";
+@import "./layout/menus.scss" 
 
 
-.tuto ol {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    @media (max-width: 800px) {
-        flex-direction: column;
-    }
-}
-.tuto li {
-    background-color: #f6f6f6;
-    padding: 1rem 2rem;
-    border: 1px solid red;
-    flex-grow: 1;
-    border-radius: 1rem;
-    box-shadow: 2px 1px 7px -3px #000000;
-}

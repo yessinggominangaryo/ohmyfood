@@ -26,7 +26,8 @@ header {
   text-align: center;
   padding: 0.5rem;
 }
-.city .city i {
+
+.city i {
   font-size: 1.5rem;
 }
 
@@ -47,7 +48,6 @@ header {
   padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
-  box-shadow: 2px 1px 7px -3px #000000;
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   transition: transform 200ms;
   margin-top: 1rem;
@@ -57,6 +57,9 @@ header {
   opacity: 0.9;
 }
 
+.tuto {
+  counter-reset: section;
+}
 .tuto ol {
   display: flex;
   flex-wrap: wrap;
@@ -67,13 +70,62 @@ header {
     flex-direction: column;
   }
 }
-
-.tuto li {
+.tuto ol li {
+  position: relative;
+  list-style-type: none;
   background-color: #f6f6f6;
-  padding: 1rem 2rem;
-  border: 1px solid red;
+  padding: 1.5rem 2rem;
   flex-grow: 1;
   border-radius: 1rem;
+  box-shadow: 2px 1px 7px -3px #000000;
+  transform: scale "1.02";
+}
+.tuto ol li ::before {
+  content: counter(section);
+  counter-increment: section;
+  color: white;
+  background-color: purple;
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 30%;
+  justify-content: center;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(50%);
+}
+.tuto ol li i .fas {
+  margin-right: 1rem;
+}
+
+.menus {
+  background-color: #f6f6f6;
+}
+.menus h2 {
+  margin-bottom: 2rem;
+}
+.menus .menus__cards {
+  display: grid;
+  flex-wrap: 1;
+  gap: 2rem;
+}
+@media (max-width: 767px) {
+  .menus .menus__cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.menus .card {
+  border: 1px solid black;
+  height: 4rem;
+  flex-grow: 1;
+  min-width: 30rem;
+}
+.menus .card .card__image {
+  background-image: url("../..images/jay-wennington-N_Y88TWmGwA-unsplash.c3ee4ecc.jpg");
+  height: 15rem;
 }
 
 /*# sourceMappingURL=style.css.map */

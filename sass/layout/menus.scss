@@ -1,0 +1,26 @@
+.menus {
+    background-color: #f6f6f6;
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    .menus__cards {
+        display: grid;
+        flex-wrap: 1 ;
+        gap: 2rem;
+        @media (max-width: 767px) {
+          grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .card {
+        border: 1px solid black;
+        .card__image {
+            background-image: url("../..images/jay-wennington-N_Y88TWmGwA-unsplash.c3ee4ecc.jpg");
+            height: 15rem;
+        }
+        height: 4rem;
+        flex-grow: 1;
+        min-width: 30rem;
+    }
+}
+
