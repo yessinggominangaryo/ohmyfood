@@ -1,26 +1,58 @@
+@use "../utils/variable.scss";
+@use "../utils/colors.scss";
+
 .menus {
     background-color: #f6f6f6;
-    h2 {
-        margin-bottom: 2rem;
-    }
 
-    .menus__cards {
+    &__cards {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
         flex-wrap: 1 ;
-        gap: 2rem;
-        @media (max-width: 767px) {
+        gap: 1rem;
+        @media (max-width:variable.$breakpoint) {
           grid-template-columns: repeat(1, 1fr);
+        }
+        .new {
+            position: relative;
+        }
+        .new::before {
+            content: "nouveau";
+            position: absolute;
+            height: 2rem;
+            width: 5rem;
+            background-color: colors.$color-tertiary;
+            display: grid;
+            place-items: center;
+            right: 1rem;
+            top: 1rem;
         }
     }
     .card {
-        border: 1px solid black;
-        .card__image {
-            background-image: url("../..images/jay-wennington-N_Y88TWmGwA-unsplash.c3ee4ecc.jpg");
+       & .card__image {
             height: 15rem;
+            border-radius: 1rem 1rem 0 0;
+            background-size: cover;
         }
-        height: 4rem;
-        flex-grow: 1;
-        min-width: 30rem;
+        @for $i from 1 through 4 {
+            &__image-#{$i} {
+                background-image: url("./image/menu#{$i}.jpg");
+            }
+        }
+            &__description {
+            position: relative;
+            h3,
+            p {
+              margin: 0.5rem;
+            }
+            i {
+                font-size: 2rem;
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%); 
+            }
+           
+        }
     }
 }
 

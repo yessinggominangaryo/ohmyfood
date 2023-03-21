@@ -1,8 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&family=Shrikhand&display=swap");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
+}
+
+main {
+  padding: 0 1rem;
+  margin: 0;
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 header {
@@ -58,14 +79,15 @@ header {
 }
 
 .tuto {
-  counter-reset: section;
+  counter-reset: steps;
+  margin-bottom: 2rem;
 }
 .tuto ol {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .tuto ol {
     flex-direction: column;
   }
@@ -80,52 +102,87 @@ header {
   box-shadow: 2px 1px 7px -3px #000000;
   transform: scale "1.02";
 }
-.tuto ol li ::before {
-  content: counter(section);
+.tuto ol li::before {
+  content: counter(spets);
   counter-increment: section;
   color: white;
-  background-color: purple;
-  width: 3rem;
-  height: 3rem;
+  background-color: #9356dc;
+  width: 2rem;
+  height: 2rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
   position: absolute;
-  bottom: 30%;
+  bottom: 50%;
   justify-content: center;
   left: -1rem;
   top: 50%;
-  transform: translateY(50%);
+  transform: translateY(-50%);
 }
 .tuto ol li i .fas {
   margin-right: 1rem;
+  color: #7e7e7e;
+  font-size: 1.5rem;
 }
 
 .menus {
   background-color: #f6f6f6;
 }
-.menus h2 {
-  margin-bottom: 2rem;
-}
-.menus .menus__cards {
+.menus__cards {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   flex-wrap: 1;
-  gap: 2rem;
+  gap: 1rem;
 }
-@media (max-width: 767px) {
-  .menus .menus__cards {
+@media (max-width: 1000px) {
+  .menus__cards {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-.menus .card {
-  border: 1px solid black;
-  height: 4rem;
-  flex-grow: 1;
-  min-width: 30rem;
+.menus__cards .new {
+  position: relative;
+}
+.menus__cards .new::before {
+  content: "nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99e2d0;
+  display: grid;
+  place-items: center;
+  right: 1rem;
+  top: 1rem;
 }
 .menus .card .card__image {
-  background-image: url("../..images/jay-wennington-N_Y88TWmGwA-unsplash.c3ee4ecc.jpg");
   height: 15rem;
+  border-radius: 1rem 1rem 0 0;
+  background-size: cover;
+}
+.menus .card__image-1 {
+  background-image: url("./image/menu1.jpg");
+}
+.menus .card__image-2 {
+  background-image: url("./image/menu2.jpg");
+}
+.menus .card__image-3 {
+  background-image: url("./image/menu3.jpg");
+}
+.menus .card__image-4 {
+  background-image: url("./image/menu4.jpg");
+}
+.menus .card__description {
+  position: relative;
+}
+.menus .card__description h3,
+.menus .card__description p {
+  margin: 0.5rem;
+}
+.menus .card__description i {
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /*# sourceMappingURL=style.css.map */
