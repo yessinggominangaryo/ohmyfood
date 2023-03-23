@@ -1,0 +1,46 @@
+@mixin gradient($opacity) {
+    background-image: linear-gradient(to top, rgba(147, 86, 220, $opacity), rgba(255, 121, 218, $opacity));
+}
+
+@mixin base-shadow {
+    box-shadow: 2px 1px 8px -3px #000000;
+}
+
+@mixin zoom {
+    transform: scale(1.02);
+}
+@mixin heart($opacity: 1, $font-weight: 900, $color: transparent) {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "font Awesome 5 free";
+    font-weight: 400;
+    font-size: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color;
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: $opacity;
+    transition: all 200ms ease-in-out;
+}
+@mixin heart-animated {
+    position: relative;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    &::before {
+        @include heart;
+    }
+    &::after {
+        @include heart($opacity: 0, $font-weight: 900, $color: transparent);
+        @include gradient(1);
+    }
+    &:hover::after {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+    }
+}

@@ -1,5 +1,4 @@
-@use "../utils/box-shadow.scss";
-@use "../utils/zoom.scss";
+@use "../utils/mixins";
 @use "../utils/variable.scss";
 @use "../utils/colors.scss";
 
@@ -39,8 +38,8 @@
        padding: 1.5rem 2rem; 
        flex-grow: 1;
        border-radius: 1rem;
-       box-shadow: 2px 1px 7px -3px #000000;
-       transform: scale"1.02";
+      @include mixins.base-shadow;
+     
       & i .fas {
         margin-right: 1rem;
         color: colors.$lightgrey;

@@ -1,0 +1,13 @@
+footer {
+    background-color: #353535;
+    padding: 0 2rem;
+    color: white;
+  }
+  footer h2 {
+    font-family: "shrikhand", "sans-serif";
+    font-weight: 500;
+    padding: 1rem 0;
+  }
+  footer p {
+    padding: 0.5rem;
+  }

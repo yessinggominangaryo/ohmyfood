@@ -13,7 +13,9 @@ body {
 
 main {
   padding: 0 1rem;
+  z-index: 1;
   margin: 0;
+  position: relative;
 }
 
 h3,
@@ -29,13 +31,15 @@ a {
 header {
   font-family: "Shrikhand", cursive;
   text-align: center;
-  margin-top: 0;
-  position: sticky;
+  position: fixed;
+  z-index: 2;
   top: 0;
+  width: 100%;
+  margin-top: 0;
   background-color: white;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
   padding: 0.3rem;
-  margin: 0rem;
+  margin: 0rem 0 100px 0;
 }
 
 .city {
@@ -46,6 +50,7 @@ header {
   background-color: lightgrey;
   text-align: center;
   padding: 0.5rem;
+  margin-top: 6rem;
 }
 
 .city i {
@@ -69,9 +74,10 @@ header {
   padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
-  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   transition: transform 200ms;
   margin-top: 1rem;
+  box-shadow: 2px 1px 8px -3px #000000;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
 }
 .explorer button:hover {
   transform: scale 1.02;
@@ -127,6 +133,7 @@ header {
 
 .menus {
   background-color: #f6f6f6;
+  margin-bottom: 2rem;
 }
 .menus__cards {
   display: grid;
@@ -172,10 +179,12 @@ header {
 }
 .menus .card__description {
   position: relative;
+  background-color: white;
+  border-radius: 0 0 1rem 1rem;
 }
 .menus .card__description h3,
 .menus .card__description p {
-  margin: 0.5rem;
+  padding: 0.3rem;
 }
 .menus .card__description i {
   font-size: 2rem;
@@ -183,6 +192,32 @@ header {
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+}
+.menus .card__description .fas {
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
+}
+.menus .card__description:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+
+footer {
+  background-color: #353535;
+  padding: 0 2rem;
+  color: white;
+}
+footer h2 {
+  font-family: "shrikhand", "sans-serif";
+  font-weight: 500;
+  padding: 1rem 0;
+}
+footer p {
+  padding: 0.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
