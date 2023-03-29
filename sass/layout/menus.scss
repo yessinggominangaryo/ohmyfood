@@ -8,11 +8,11 @@
         background-color: #f6f6f6;
         margin-bottom: 2rem;
     
-        &__cards {
+        .cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             flex-wrap: 1 ;
-            gap: 1rem;
+            gap: 2rem;
             @media (max-width:variable.$breakpoint) {
               grid-template-columns: repeat(1, 1fr);
             }
@@ -24,7 +24,6 @@
                 position: absolute;
                 height: 2rem;
                 width: 5rem;
-                background-color: colors.$color-tertiary;
                 display: grid;
                 place-items: center;
                 right: 1rem;

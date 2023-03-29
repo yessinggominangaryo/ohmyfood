@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,500&family=Shrikhand&display=swap');
 
 *,
@@ -19,13 +19,14 @@ main {
     position: relative;
 }
 
-h2 {
-    padding: 2rem 0;
-    margin: 0;
-}
-
+h1, 
+h2,
 h3,
+h4,
+h5,
+h6,
 p {
+    padding: 0;
     margin: 0;
 }
 

@@ -1,4 +1,4 @@
-@use "./sass/base.scss";
+@use "./utils/base.scss";
 @use "./layout/header.scss";
 @use "./layout/city.scss";
 @use "./layout/explorer.scss";
@@ -6,5 +6,6 @@
 @use "./layout/menus.scss";
 @use "./layout/footer.scss";
 @use "./page/restaurant.scss"; 
+
 
 

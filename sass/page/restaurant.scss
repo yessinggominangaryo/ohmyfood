@@ -1,8 +1,9 @@
 @use "../utils/mixins.scss";
 @use "../utils/variable.scss";
 @use "../utils/colors.scss";
+@use "../utils/animtions.scss";
 
-body {
+.body {
     background-color: colors.$lightergrey;
 }
 
@@ -26,6 +27,9 @@ body {
       }
     } 
     
+    main h2 {
+        margin-right: 1rem;
+    }
     .resto-main {
         padding: 0 1rem;
         background-color: colors.$lightergrey;
@@ -33,16 +37,97 @@ body {
     
     .menus {
         display: grid;
+        grid-template-rows: repeat(3, 1fr);
         gap: 1rem;
-        grid-template-columns: repeat(3, 1fr);
-        background-color: colors.$lightergrey;
         @media (max-width: variable.$breakpoint) {
             grid-template-columns: 1fr;
         }
-        .menus__category {
-            border: 1px solid blue;
-            background-color: white;
+        h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            position: relative;
+            padding: 2rem;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 3.5rem;
+                left: 33px;
+                height: 0.25rem;
+                width: 3rem;
+                background-color: colors.$color-tertiary;
+            }
         }
+        .menus__category {
+            background-color: white;
+            overflow: hidden;
+            border-radius: 1rem;
+            display: flex;
+            @include mixins.base-shadow;
+            align-items: flex-end;
+            .menu-item {
+                display: flex;
+                border-radius: 1rem;
+                overflow: hidden;
+                margin: 1rem;
+                
+                }
+                .menu-item__price {
+                    margin-left: auto;
+                    font-weight: 900;
+                    padding-bottom: 21px;
+                    display: flex;
+                    align-items: flex-end;
+                }
+                 .menu-item__description {
+                    padding: 5px;
+                    overflow: hidden;
+                    h4, 
+                    p {
+                        display: grid;
+                        white-space: center;
+                        text-overflow: ellipsis;
+                    }
+            }
+            .menu-item__check {
+                display: grid;
+                place-items: center;
+                flex-shrink: 0;
+                $button-width: 4rem;
+                border-radius: 0 1rem 1rem 0;
+                background-color: colors.$color-tertiary;
+                height: 100%;
+                margin-left: 1rem;
+                margin-right: -4rem;
+                padding: 1rem;
+                width: $button-width;
+                transition: margin-right 0.5;
+                i {
+                    background-color: white;
+                    display: grid;
+                    place-items: center;
+                    width: 1rem;
+                    border-radius: 50%;
+                    color: colors.$color-tertiary;
+                  }
+            }
+            &:hover .menu-item__check {
+                margin-right: 0;
+                cursor: pointer;
+            }
+        }
+    
+    i {
+        @include animtions.quarterspin;
+        animation: quarterspin 1.5s ease-in-out;
+    }
+ }
+
+    section.order {
+       height: 30vh;
+       display: grid;
+       place-items: center;
+       button {
+        @include mixins.base-button;
+       }
     }
 }
-

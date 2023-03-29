@@ -6,17 +6,22 @@
     box-shadow: 2px 1px 8px -3px #000000;
 }
 
-@mixin zoom {
+@mixin transform-zoom {
     transform: scale(1.02);
 }
-@mixin heart($opacity: 1, $font-weight: 900, $color: transparent) {
+
+@mixin font-awsome {
     display: inline-block;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     font-family: "font Awesome 5 free";
-    font-weight: 400;
+    font-weight: $font-weight;
+}
+
+@mixin heart($opacity: 1, $font-weight: 400, $color: inherit) {
+    content: "\f004";
     font-size: 2rem;
     position: absolute;
     right: 1rem;
@@ -36,11 +41,29 @@
         @include heart;
     }
     &::after {
-        @include heart($opacity: 0, $font-weight: 900, $color: transparent);
+        @include heart($opacity: 0, $font-weight: 400, $color: inherit);
         @include gradient(1);
     }
     &:hover::after {
         opacity: 1;
         transform: translateY(-50%) scale(1.1);
+    }
+}
+
+@mixin base-button {
+    color: white;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 200ms;
+    margin-top: 1rem;
+    cursor: pointer;
+    @include base-shadow;
+    @include gradient(0.9);
+    &:hover {
+        transform: scale (1.02);
+        opacity: 0.9;
     }
 }
