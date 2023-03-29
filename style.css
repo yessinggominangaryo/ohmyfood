@@ -186,37 +186,6 @@ header {
   background-color: white;
   border-radius: 0 0 1rem 1rem;
 }
-#homepage .menus .card__description::before {
-  content: "\f004";
-  font-size: 2rem;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
-}
-#homepage .menus .card__description::after {
-  content: "\f004";
-  font-size: 2rem;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-  transition: all 200ms ease-in-out;
-  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
-}
-#homepage .menus .card__description:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-}
 #homepage .menus .card__description h3,
 #homepage .menus .card__description p {
   padding: 0.3rem;
@@ -277,40 +246,6 @@ footer p {
   border-radius: 0 0 1rem 1rem;
   border-radius: 1rem 1rem 0 0;
   background-color: #f6f6f6;
-}
-#page-resto .resto__title h2::before {
-  content: "\f004";
-  font-size: 2rem;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 1;
-  transition: all 200ms ease-in-out;
-}
-#page-resto .resto__title h2::after {
-  content: "\f004";
-  font-size: 2rem;
-  position: absolute;
-  right: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-  color: inherit;
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-  transition: all 200ms ease-in-out;
-  background-image: linear-gradient(to top, rgb(147, 86, 220), rgb(255, 121, 218));
-}
-#page-resto .resto__title h2:hover::after {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.1);
-}
-#page-resto main h2 {
-  margin-right: 1rem;
 }
 #page-resto .resto-main {
   padding: 0 1rem;

@@ -37,17 +37,17 @@
     position: relative;
     background-color: white;
     border-radius: 0 0 1rem 1rem;
-    &::before {
-        @include heart;
-    }
-    &::after {
-        @include heart($opacity: 0, $font-weight: 400, $color: inherit);
-        @include gradient(1);
-    }
-    &:hover::after {
-        opacity: 1;
-        transform: translateY(-50%) scale(1.1);
-    }
+  // &::before {
+   //     @include heart;
+   // }
+   // &::after {
+   //     @include heart($opacity: 0, $font-weight: 400, $color: inherit);
+   //     @include gradient(1);
+   // }
+   // &:hover::after {
+    //    opacity: 1;
+   //     transform: translateY(-50%) scale(1.1);
+  //  }
 }
 
 @mixin base-button {
