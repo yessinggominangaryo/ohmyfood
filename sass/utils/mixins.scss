@@ -6,12 +6,13 @@
     box-shadow: 2px 1px 8px -3px #000000;
 }
 
-@mixin transform-zoom {
-    transform: scale(1.02);
+@mixin transform-zoom($zoom-level: 1.02, $transformation: none) {
+    transform: $transformation scale($zoom-level);
 }
 
-@mixin font-awsome {
+@mixin font-awesome($font-weight: 400) {
     display: inline-block;
+    position: absolute;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
@@ -21,9 +22,9 @@
 }
 
 @mixin heart($opacity: 1, $font-weight: 400, $color: inherit) {
+    @include font-awesome( $font-weight);
     content: "\f004";
     font-size: 2rem;
-    position: absolute;
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);

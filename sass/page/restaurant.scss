@@ -8,6 +8,20 @@
 }
 
 #page-resto {
+    header {
+        &:hover::before {
+            @include mixins.transform-zoom(1.20, translateY(-50%));
+        }
+        &::before {
+        @include mixins.font-awesome($font-weight: 900);
+        content: "\f060";
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        transform: transform 200ms;
+        }
+    }    
     .banner img {
         display: block;
         width: 100%;
@@ -61,13 +75,20 @@
             border-radius: 1rem;
             display: flex;
             @include mixins.base-shadow;
+            animation: appear 3s;
+            animation-fill-mode: both;
             align-items: flex-end;
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    animation-delay: 100ms * $i;
+                }
+            }
+
             .menu-item {
                 display: flex;
                 border-radius: 1rem;
                 overflow: hidden;
                 margin: 1rem;
-                
                 }
                 .menu-item__price {
                     margin-left: auto;
@@ -108,16 +129,18 @@
                     color: colors.$color-tertiary;
                   }
             }
-            &:hover .menu-item__check {
-                margin-right: 0;
+            &:hover {
                 cursor: pointer;
+            .menu-item__check {
+                margin-right: 0;
+               }
+               i {
+                @include animtions.quarterspin;
+                animation: quarterspin 1.5s ease-in-out;
+            }
             }
         }
     
-    i {
-        @include animtions.quarterspin;
-        animation: quarterspin 1.5s ease-in-out;
-    }
  }
 
     section.order {
