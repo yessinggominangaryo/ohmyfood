@@ -54,6 +54,7 @@
         @media (max-width: variable.$breakpoint) {
             grid-template-columns: 1fr;
         }
+       
         h3 {
             text-transform: uppercase;
             font-weight: 400;
@@ -75,7 +76,7 @@
             border-radius: 1rem;
             display: flex;
             @include mixins.base-shadow;
-            animation: appear 3s;
+            animation: appear 1s;
             animation-fill-mode: both;
             align-items: flex-end;
             @for $i from 1 through 3 {

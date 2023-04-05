@@ -44,7 +44,7 @@ header {
   margin-top: 0;
   background-color: white;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.15);
-  padding: 0.3rem;
+  padding: 1.3rem;
   margin: 0rem 0 100px 0;
 }
 
@@ -55,8 +55,8 @@ header {
   gap: 1rem;
   background-color: lightgrey;
   text-align: center;
-  padding: 0.5rem;
-  margin-top: 6rem;
+  padding: 1rem;
+  margin-top: 5.5rem;
 }
 
 .city i {
@@ -67,8 +67,8 @@ header {
   text-align: center;
 }
 .explorer h2 {
-  margin-top: 2rem;
-  font-size: 2rem;
+  margin: 2rem;
+  font-size: 1.5rem;
 }
 .explorer p {
   font-size: 1rem;
@@ -76,7 +76,6 @@ header {
 .explorer button {
   color: white;
   font-weight: 300;
-  font-size: 1.5rem;
   padding: 1rem 2rem;
   border: none;
   border-radius: 2rem;
@@ -84,6 +83,7 @@ header {
   margin-top: 1rem;
   box-shadow: 2px 1px 8px -3px #000000;
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  font-size: 1rem;
 }
 .explorer button:hover {
   transform: scale 1.02;
@@ -92,12 +92,37 @@ header {
 
 .loader {
   position: fixed;
-  background-color: red;
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
   height: 100vh;
   inset: 0;
-  opacity: 0.9;
+  z-index: 3;
+  opacity: 0.7;
+  animation: disappear 200ms 1s forwards;
+  transform-origin: top;
+}
+.loader::after {
+  content: "";
+  height: 100px;
+  width: 100px;
+  border: 5px solid transparent;
+  border-top: 5px solid #9356dc;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out;
+  animation-iteration-count: 3;
 }
 
+@keyframes disappear {
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .tuto {
   counter-reset: steps;
   margin-bottom: 2rem;
@@ -157,6 +182,11 @@ header {
 @media (max-width: 1000px) {
   #homepage .menus .cards {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (min-width: 500px) {
+  #homepage .menus .cards {
+    grid-template-columns: 1fr 1fr;
   }
 }
 #homepage .menus .cards .new {
@@ -319,7 +349,7 @@ footer p {
   border-radius: 1rem;
   display: flex;
   box-shadow: 2px 1px 8px -3px #000000;
-  animation: appear 3s;
+  animation: appear 1s;
   animation-fill-mode: both;
   align-items: flex-end;
 }

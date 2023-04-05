@@ -1,10 +1,11 @@
 @use "../utils/mixins";
+@use "../utils/colors.scss";
 
 .explorer {
     text-align: center;
     & h2 {
-        margin-top: 2rem;
-        font-size: 2rem;
+        margin: 2rem;
+        font-size: 1.5rem;
     }
     & p {
         font-size: 1rem;
@@ -12,7 +13,6 @@
     & button {
         color: white;
         font-weight: 300;
-        font-size: 1.5rem;
         padding: 1rem 2rem;
         border: none;
         border-radius: 2rem;
@@ -20,6 +20,7 @@
         margin-top: 1rem;
         @include mixins.base-shadow;
         @include mixins.gradient(0.9);
+        font-size: 1rem; 
     }
     & button:hover {
         transform: scale (1.02);
@@ -28,10 +29,38 @@
 }
 
 .loader {
+    $animation-duration: 1s;
+    $animation-count: 3;
     position: fixed;
-    background-color: red;
+    display: grid;
+    place-items: center;
+    background-color: #ffffff;
     height: 100vh;
     inset: 0;
-    //z-index: 0;
-    opacity: 0.9;
+    z-index: 3;
+    opacity: 0.7;
+    animation: disappear 200ms $animation-duration forwards;
+    transform-origin: top;
+    &::after {
+        content: "";
+        height: 100px;
+        width: 100px;
+        border: 5px solid transparent;
+        border-top: 5px solid colors.$purple;
+        border-radius: 50%;
+        animation: spin $animation-duration ease-in-out;
+        animation-iteration-count: $animation-count;
+    }
+}
+
+@keyframes disappear {
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
