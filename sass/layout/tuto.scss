@@ -16,6 +16,9 @@
       }
    & li {
         position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
         &::before {
             content: counter(spets);
             counter-increment: section;
@@ -39,6 +42,13 @@
        flex-grow: 1;
        border-radius: 1rem;
       @include mixins.base-shadow;
+      &:hover {
+        @include mixins.transform-zoom;
+        background-color: lighten(colors.$purple, 35%);
+        i::before {
+          color: colors.$purple;
+        }
+      }
      
       & i .fas {
         margin-right: 1rem;

@@ -8,7 +8,7 @@
         background-color: #f6f6f6;
         margin-bottom: 2rem;
     
-        .cards {
+        &__cards {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             flex-wrap: 1 ;
@@ -38,6 +38,7 @@
                 height: 15rem;
                 border-radius: 1rem 1rem 0 0;
                 background-size: cover;
+                background-position: center;
             }
             @for $i from 1 through 4 {
                 &__image-#{$i} {
