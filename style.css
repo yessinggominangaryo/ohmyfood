@@ -55,7 +55,7 @@ header {
   gap: 1rem;
   background-color: lightgrey;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: 5.5rem;
 }
 
@@ -86,7 +86,7 @@ header {
   font-size: 1rem;
 }
 .explorer button:hover {
-  transform: scale 1.02;
+  transform: scale(1.02);
   opacity: 0.9;
 }
 
@@ -173,7 +173,7 @@ header {
 .tuto ol li:hover i::before {
   color: #9356dc;
 }
-.tuto ol li i .fas {
+.tuto ol li i.fas {
   margin-right: 1rem;
   color: #7e7e7e;
   font-size: 1.5rem;
