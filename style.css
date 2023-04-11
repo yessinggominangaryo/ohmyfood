@@ -124,10 +124,10 @@ header {
   }
 }
 .tuto {
-  counter-reset: steps;
   margin-bottom: 2rem;
 }
 .tuto ol {
+  counter-reset: spets;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -151,7 +151,7 @@ header {
 }
 .tuto ol li::before {
   content: counter(spets);
-  counter-increment: section;
+  counter-increment: spets;
   color: white;
   background-color: #9356dc;
   width: 2rem;

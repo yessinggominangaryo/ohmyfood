@@ -6,9 +6,9 @@
 
 
 .tuto {
-    counter-reset: steps;
     margin-bottom: 2rem;
    & ol {
+    counter-reset: spets;
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -22,7 +22,7 @@
         gap: 1rem;
         &::before {
             content: counter(spets);
-            counter-increment: section;
+            counter-increment: spets;
             color: white;
             background-color: colors.$purple;
             width: 2 * variable.$tuto-bullet-height; 
