@@ -211,6 +211,7 @@ header {
   place-items: center;
   right: 1rem;
   top: 1rem;
+  background-color: aqua;
 }
 #homepage .menus .card .card__image {
   height: 15rem;
